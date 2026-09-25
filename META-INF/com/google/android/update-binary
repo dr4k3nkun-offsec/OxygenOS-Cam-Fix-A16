@@ -1,0 +1,16 @@
+#!/sbin/sh
+OUTFD=$2
+ZIPFILE=$3
+
+if [ -f /data/adb/magisk/util_functions.sh ]; then
+  . /data/adb/magisk/util_functions.sh
+elif [ -f /data/adb/ksu/bin/util_functions.sh ]; then
+  . /data/adb/ksu/bin/util_functions.sh
+elif [ -f /data/adb/ap/bin/util_functions.sh ]; then
+  . /data/adb/ap/bin/util_functions.sh
+else
+  exit 1
+fi
+
+install_module
+exit 0
